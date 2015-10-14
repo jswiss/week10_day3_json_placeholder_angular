@@ -11,29 +11,29 @@
   <main ng-controller="CommentController as com">
     <h1>Loads of Bad Comments</h1>
 
-    <form ng-submit="com.addComment()">
+    <form ng-submit="com.postComment()">
     <div>
       <label for="user-name">Name:</label>
-      <input type="text" id="user-name" placeholder="Fran Sancisco" ng-model="com.addComment.name">
+      <input type="text" id="user-name" placeholder="Fran Sancisco" ng-model="com.postComment.name">
     </div>
     <div>
       <label for="user-email">Email:</label>
-      <input type="text" id-"user-email" placeholder="bob@job.com" ng-model="com.addComment.email">
+      <input type="text" id-"user-email" placeholder="bob@job.com" ng-model="com.postComment.email">
     </div>
     <div>
       <label for="user-comment">Comment:</label>
-      <input type="text" id-"user-comment" placeholder="rabble rabble rabble..." ng-model="com.addComment.comment">
+      <input type="text" id-"user-comment" placeholder="rabble rabble rabble..." ng-model="com.postComment.comment">
     </div>
     <input type="submit" value="Add">
   </form>
 
     <ul>
       <li ng-repeat="comment in com.comments">
-        <strong>{{ comment.name }}</strong>
+        <strong contenteditable ng-model="comment.name">{{ comment.name }}</strong>
         <br>
-        <em>{{ comment.email }}</em>
+        <em contenteditable ng-model="comment.name">{{ comment.email }}</em>
         <br>
-        <p>{{ comment.body }}</p>
+        <p contenteditable ng-model="comment.name">{{ comment.body }}</p>
       </li>
     </ul>
   </main>

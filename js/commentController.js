@@ -10,6 +10,5 @@ angular.module('jsonApp').controller('CommentController', function(JsonFactory) 
     JsonFactory.postComment()
     .then(function(response) {
     	self.comment = response;
-    	console.log(self.comment);
     });
 });

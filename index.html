@@ -8,10 +8,34 @@
   <script type="text/javascript" src="js/jsonFactory.js"></script>
 </head>
 <body>
-  <main ng-controller="CommentController as comment">
-    <h1>{{ comment[0].name }}</h1>
-    <h3>{{ comment[0].email }}</h3>
-    <p>{{ comment[0].body }}</p>
+  <main ng-controller="CommentController as com">
+    <h1>Loads of Bad Comments</h1>
+
+    <form ng-submit="com.addComment()">
+    <div>
+      <label for="user-name">Name:</label>
+      <input type="text" id="user-name" placeholder="Fran Sancisco" ng-model="com.addComment.name">
+    </div>
+    <div>
+      <label for="user-email">Email:</label>
+      <input type="text" id-"user-email" placeholder="bob@job.com" ng-model="com.addComment.email">
+    </div>
+    <div>
+      <label for="user-comment">Comment:</label>
+      <input type="text" id-"user-comment" placeholder="rabble rabble rabble..." ng-model="com.addComment.comment">
+    </div>
+    <input type="submit" value="Add">
+  </form>
+
+    <ul>
+      <li ng-repeat="comment in com.comments">
+        <strong>{{ comment.name }}</strong>
+        <br>
+        <em>{{ comment.email }}</em>
+        <br>
+        <p>{{ comment.body }}</p>
+      </li>
+    </ul>
   </main>
 </body>
 </html>

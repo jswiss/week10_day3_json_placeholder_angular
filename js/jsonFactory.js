@@ -29,6 +29,21 @@ angular.module('jsonApp')
 	        })
 
 	        return deferred.promise;
+			},
+
+			removeComment: function() {
+				var deferred = $q.defer();
+
+				$http
+					.delete('http://jsonplaceholder.typicode.com/posts/1')
+					.success(function(response) {
+	          deferred.resolve(response);
+	        })
+	        .error(function(error) {
+	          deferred.reject(error);
+	        })
+
+	        return deferred.promise;
 			}
 		}
 

@@ -11,4 +11,10 @@ angular.module('jsonApp').controller('CommentController', function(JsonFactory) 
     .then(function(response) {
     	self.comment = response;
     });
+
+    JsonFactory.removeComment()
+    .then(function(response) {
+    	self.comment = response;
+    	console.log(response);
+    })
 });

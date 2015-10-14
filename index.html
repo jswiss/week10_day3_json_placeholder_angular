@@ -29,7 +29,7 @@
 
     <ul>
       <li ng-repeat="comment in com.comments">
-        <strong contenteditable ng-model="comment.name">{{ comment.name }}</strong>
+        <strong contenteditable ng-model="comment.name">{{ comment.name }}</strong> <span ng-click="comment.removeComment(comment)">delete</span>
         <br>
         <em contenteditable ng-model="comment.name">{{ comment.email }}</em>
         <br>
